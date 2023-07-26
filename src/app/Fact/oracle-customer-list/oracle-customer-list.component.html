@@ -1,0 +1,37 @@
+<mdb-form-control>
+    <div class="container" style="text-align: center;">
+        <form [formGroup]="cityForm">
+        <div class="row"> 
+            <div class="col-sm-2">
+                <label mdbLabel class="form-label" for="txtFactCode">Fact Code:</label>
+            </div>          
+            <div class="col-sm-3">
+                <input mdbInput type="text" id="txtFactCode" class="form-control" formControlName="Name" />
+            </div>
+            <div class="col-sm-4">
+                <button class="btn btn-rounded blue-gradient " id="btnSearch"  (click)="SearchCustomer()">Search</button>   &nbsp;                        
+                <button class="btn btn-rounded blue-gradient " id="btnAdd"  (click)="BackToAddCustomer()" style="width: auto;">Add Customer</button>
+            </div>          
+        </div>
+        </form>
+    </div>
+    <div class="container">
+        <br>
+    </div>
+    <div class="container">
+        <ag-grid-angular
+        id="mygrid"
+        style="width: 82%; height: 70%;position: absolute;"
+        class="ag-theme-alpine-dark"
+        [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef"
+        [suppressRowClickSelection]="true"
+        [suppressCellFocus]="true"
+        [statusBar]="statusBar"
+        [rowData]="rowData$ | async"
+        [rowSelection]="'multiple'"
+        (gridReady)="onGridReady($event)"
+        (cellClicked)="onCellClicked($event)"
+      ></ag-grid-angular>
+    </div>
+  </mdb-form-control>

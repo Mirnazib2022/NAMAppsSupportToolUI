@@ -1,0 +1,48 @@
+<div class="container" style="text-align: center;">
+  <div class="row">
+    <div class="col-sm">
+       User Name: <input type="text" id="txtUserName" />
+    </div>
+    <div class="col-sm">
+        Email: <input type="email" id="txtEmail" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+        First Name: <input type="text" id="txtFirstName" />
+    </div>
+    <div class="col-sm">
+        Last Name: <input type="text" id="txtLastName" />
+    </div>
+  </div>
+  <div style="text-align: center;">
+        <button id="btnSearch" (click)="showUser()">Search</button>
+        <button id="btnAdd" (click)="openModal()">Search</button>
+  </div>
+</div>
+
+
+<ng-template [ngIf]="this.userList.length>0">
+    
+    <table>
+        <thead>
+            <th>User Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone No.</th>
+        </thead>
+        <tbody>
+            
+            <tr *ngFor="let user of this.userList">
+                <td>{{user.userName}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phoneNumber}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</ng-template>
+

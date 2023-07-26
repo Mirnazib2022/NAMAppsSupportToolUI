@@ -1,0 +1,86 @@
+<ng-template [ngIf]="this.authService.currentUserValue">
+<div style="width: 100%;height: 50px;background-color: #dedfe7;">
+  <i class="fa fa-power-off logout" title="Sign out" (click)="logout()"></i>
+  <span class="home" (click)="homeNavigate()">
+    <i class="fa fa-home" aria-hidden="true" style="font-size: 32px !important;"></i>  NAM APPS SUPPORT TOOL</span>
+  <span class="d-none d-sm-inline welcome">Welcome <b>{{this.authService.currentUserValue.UserName}}</b>&nbsp;<i class="fa fa-user"></i>  
+    
+  </span>
+   
+</div>
+</ng-template>
+<div class="container-fluid" >
+  <div class="row flex-nowrap">
+    <ng-template [ngIf]="this.authService.currentUserValue">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-custom" >
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+              
+
+              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                  <!-- <li class="nav-item">
+                      <a href="#" class="nav-link parent-nav-link align-middle px-0">
+                        <i class="fa fa-home" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline menuHover">Home</span>
+                      </a>
+                  </li> -->
+                  <ng-template [ngIf]="this.isAdmin">
+                    <li>
+                      <a href="#config" data-bs-toggle="collapse" class="nav-link parent-nav-link px-0 align-middle">
+                        <span class="ms-1 d-none d-sm-inline menuHover">Configuration</span> </a>
+                        <ul  class="collapse flex-column ms-1" id="config" data-bs-parent="#menu">
+                          <li class="w-100">
+                            <a routerLink="/userview" class="nav-link child-nav-link px-0"> 
+                                <span class="d-none d-sm-inline menuHover">Users</span>
+                            </a>
+                          </li>
+                          <li class="w-100">
+                            <a routerLink="/appConfig" class="nav-link child-nav-link px-0"> 
+                                <span class="d-none d-sm-inline menuHover">Applications</span>
+                            </a>
+                          </li>
+                      </ul>
+                    </li>
+                  </ng-template>
+
+                  <li *ngFor="let parent of menuList">
+                      <a href="#submenu{{parent.id}}" data-bs-toggle="collapse" class="nav-link parent-nav-link px-0 align-middle">
+                        <span class="ms-1 d-none d-sm-inline menuHover">{{parent.appName}}</span> </a>
+                      <ul  class="collapse flex-column ms-1" id="submenu{{parent.id}}" data-bs-parent="#menu">
+                          <li *ngFor="let child of parent.tblApplicationConfigs" class="w-100">
+                            <a routerLink="{{child.url}}" class="nav-link child-nav-link px-0"> 
+                                <span class="d-none d-sm-inline menuHover">{{child.configName}}</span>
+                            </a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+              <hr>
+              
+          </div>
+          <!-- <a href="#" class="nav-link align-middle px-0">
+            <i class="fa fa-home" aria-hidden="true"></i><span class="ms-1 d-none d-sm-inline menuHover">Log Out</span>
+          </a> -->
+      </div>
+    </ng-template>
+      <div class="col py-3">
+        <router-outlet></router-outlet>
+      </div>
+  </div>
+</div>
+
+     
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>  
+     
+<ng-template #mymodal let-modal>  
+  <div class="modal-header">  
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>  
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">  
+      <span aria-hidden="true">?</span>  
+    </button>  
+  </div>  
+  <div class="modal-body">  
+    This is example from Javatpoint.com  
+  </div>  
+  <div class="modal-footer">  
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>  
+  </div>  
+</ng-template>   -->

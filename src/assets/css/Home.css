@@ -1,0 +1,79 @@
+.bg-custom
+{
+	background-color: rgb(29 60 86);
+}
+.parent-nav-link
+{
+	color: antiquewhite !important;
+	font-weight: bold !important;
+}
+.child-nav-link
+{
+	color: antiquewhite !important;
+}
+
+.welcome
+{
+	color: rgb(70 37 37);
+	font-family: math;
+	font-size: 16px !important;
+	font-weight: 500 !important;
+	padding-top: 12px;
+    padding-right: 30px;
+    position: relative;
+    float: right;
+	cursor: pointer;
+}
+
+.home
+{
+	color: rgb(70 37 37);
+	font-family: math;
+	font-size: 14.5px !important;
+	font-weight: 500 !important;
+	padding-top: 6px;
+    padding-left: 25px;
+    position: absolute;
+	cursor: pointer;
+}
+.menuHover {
+	display: inline-block;
+	position: relative;
+  }
+  
+  .menuHover::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #f1eeee;
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+  }
+  
+  .menuHover:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+  }
+  
+  .logout
+{
+	font-size: 32px !important;
+	padding-top: 8px!important;
+    padding-right: 20px!important;
+    position: relative!important;
+    float: right!important;
+	cursor: pointer!important;
+	color: rgb(29 60 86) !important;
+}
+  .logout:hover,.home:hover {
+	transform: scaleX(1.002);
+	color: rgb(31, 114, 182) !important;
+  }
+
+  
+
+  

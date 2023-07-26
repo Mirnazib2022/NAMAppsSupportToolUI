@@ -1,0 +1,43 @@
+<mdb-form-control>
+    <div class="container">
+        <div class="row">  
+            <p>
+                <b>
+                    View Invoice</b>
+            </p>
+        </div>
+    </div>
+    <div class="container" style="text-align: center;">
+        <form [formGroup]="cityForm">
+        <div class="row">           
+            <div class="col-sm-2">
+                <label mdbLabel class="form-label" for="txtInvoiceNum">Invoice Number:</label>
+            </div>
+            <div class="col-sm-4">
+                <input mdbInput type="text" id="txtInvoiceNum" class="form-control"  formControlName="InvoiceNum"/>
+            </div>
+            <div class="col-sm-4">
+                <button class="btn btn-rounded blue-gradient " id="btnSearch"  (click)="SearchInvice()">Search</button>   &nbsp;                        
+                <button class="btn btn-rounded blue-gradient " id="btnAdd"  (click)="BackToAddInvoice()" style="width: auto;">Add Invoice</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <br>
+    <div class="container">
+        <ag-grid-angular
+        id="mygrid"
+        style="width: 82%; height: 70%;position: absolute;"
+        class="ag-theme-alpine-dark"
+        [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef"
+        [suppressRowClickSelection]="true"
+        [suppressCellFocus]="true"
+        [statusBar]="statusBar"
+        [rowData]="rowData$ | async"
+        [rowSelection]="'multiple'"
+        (gridReady)="onGridReady($event)"
+        (cellClicked)="onCellClicked($event)"
+      ></ag-grid-angular>
+    </div>
+  </mdb-form-control>

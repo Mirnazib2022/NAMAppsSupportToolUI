@@ -1,0 +1,45 @@
+<div class="card-body w-95">
+  <div style="font-family:Roboto, sans-seriff; background-color: rgb(29, 60, 86);">
+    <div class="p-4">
+      <h2 class="text-center mb-4 h4 text-white">ADD APPLICATION</h2>
+      <div>
+        <form [formGroup]="appForm">
+
+          <div class=" mb-4 ml-5 textbox-width margin">
+            <input type="text" id="txtAppName" class="form-control form-control-sm" placeholder="APP NAME"
+              formControlName="appName" />
+            <!-- <label class="form-label" for="txtAppName">APP NAME</label> -->
+          </div>
+
+          <div class="mb-4 textbox-width margin ">
+            <input type="text" id="txtSequence" class="form-control form-control-sm " placeholder="SEQUENCE"
+              formControlName="seq" />
+            <!-- <label class="form-label" for="txtSequence">SEQUENCE</label> -->
+          </div>
+
+          <div class="mb-4 textbox-width margin">
+            <input type="checkbox" id="chkIsActive" class="form-check-input" value="" formControlName="active" />
+            <label class="form-check-label  text-white" style="margin-left: 10px;" for="chkIsActive"> ACTIVE</label>
+          </div>
+
+          <div class="mb-4 textbox-width margin">
+            <!-- <select class="form-control form-control-sm select" id="drpConfig" formControlName="config" multiple> 
+            <option selected value="10">CHOOSE CONFIG</option>
+            <option value="20">demo</option>
+          </select>                     -->
+
+            <mat-select multiple class="form-control form-control-sm select" formControlName="config">
+              <mat-label>Configs</mat-label>
+              <mat-option *ngFor="let topping of toppingList" [value]="topping.value">{{topping.label}}</mat-option>
+            </mat-select>
+
+          </div>
+          <div class="text-center">
+            <button type="button" id="btnReset" class="btn btn-dark" style="margin-right: 30px;">Reset</button>
+            <button type="button" id="btnSubmit" class="btn btn-primary" (click)="saveData()">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

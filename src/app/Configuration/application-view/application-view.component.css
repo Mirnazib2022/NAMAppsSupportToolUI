@@ -1,0 +1,6 @@
+@import "src/assets/css/grid_theme.css";
+
+.ag-center-cols-container
+{
+    width: 100% !important;
+}

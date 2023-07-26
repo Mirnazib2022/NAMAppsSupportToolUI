@@ -1,0 +1,24 @@
+
+
+<div style="text-align: right;">
+  <button type="button" class="btn btn-primary" (click)="openApplicationModal()">
+      <i class="fa fa-plus"></i> ADD
+  </button>
+</div>
+<div style="height: 5px;">
+
+</div>
+  <ag-grid-angular
+    id="mygrid"
+    style="width: 82%; height: 70%;position: absolute;"
+    class="ag-theme-alpine-dark"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [suppressRowClickSelection]="true"
+    [suppressCellFocus]="true"
+    [statusBar]="statusBar"
+    [rowData]="rowData$ | async"
+    [rowSelection]="'multiple'"
+    (gridReady)="onGridReady($event)"
+    (cellClicked)="onCellClicked($event)"
+  ></ag-grid-angular>

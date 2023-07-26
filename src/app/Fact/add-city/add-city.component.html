@@ -1,0 +1,27 @@
+
+    <div class="container">
+        <div class="row">  
+            <p>
+                <b>
+                    Add City</b>
+            </p>
+        </div>
+    </div>
+    <div class="container" style="text-align: center;">
+        <form [formGroup]="cityForm">
+        <div class="row">           
+            <div class="col-sm-2">
+                <label mdbLabel class="form-label" for="txtCityName">City Name :</label>                
+            </div>
+            <div class="col-sm-3">                
+                <input mdbInput type="text" id="txtCityName" class="form-control"  formControlName="Name"/>
+            </div>
+            <div class="col-sm-4">
+                <button class="btn btn-rounded blue-gradient " id="btnAdd" (click)="SaveUpdateCity()">SAVE</button>  &nbsp;
+                <button class="btn btn-rounded blue-gradient " id="btnback" (click)="BackToCityList()">Back</button>&nbsp;
+                <button class="btn btn-rounded blue-gradient " id="btnClear" (click)="ClearFormFields()" >Clear</button>                        
+            </div>
+        </div>
+    </form>
+    </div>
+  

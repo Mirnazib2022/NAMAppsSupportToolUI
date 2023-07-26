@@ -1,0 +1,42 @@
+<mdb-form-control>
+    <div class="container">
+        <div class="row">  
+            <p>
+                <b>
+                    View Profile Set Up</b>
+            </p>
+        </div>
+    </div>
+    <div class="container" style="text-align: center;">
+        <form [formGroup]="cityForm">
+        <div class="row">                      
+            <div class="col-sm-3">
+                <label mdbLabel class="form-label" for="txtAppName">Profile Id</label>
+                <input mdbInput type="text" id="txtProfileId" class="form-control" formControlName="Name" />
+            </div>            
+            <div class="col-sm-3">  
+                <br>                                    
+                <button class="btn btn-rounded blue-gradient " id="btnSearch"  (click)="SearchProfile()">Search</button>   &nbsp;                        
+                <button class="btn btn-rounded blue-gradient " id="btnAdd"  (click)="BackToAddProfile()" style="width: auto;">Add Profile</button> 
+            </div>
+        </div>
+    </form>
+    </div>
+    <br>
+    <div class="container">
+        <ag-grid-angular
+        id="mygrid"
+        style="width: 82%; height: 70%;position: absolute;"
+        class="ag-theme-alpine-dark"
+        [columnDefs]="columnDefs"
+        [defaultColDef]="defaultColDef"
+        [suppressRowClickSelection]="true"
+        [suppressCellFocus]="true"
+        [statusBar]="statusBar"
+        [rowData]="rowData$ | async"
+        [rowSelection]="'multiple'"
+        (gridReady)="onGridReady($event)"
+        (cellClicked)="onCellClicked($event)"
+      ></ag-grid-angular>
+    </div>
+  </mdb-form-control>

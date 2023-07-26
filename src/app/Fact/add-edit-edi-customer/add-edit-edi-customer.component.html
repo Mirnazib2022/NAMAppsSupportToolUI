@@ -1,0 +1,89 @@
+<mdb-form-control>
+    <div class="container" style="text-align: center;">
+        <form [formGroup]="cityForm">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="txtFactCode" style="font-weight: bold;">Fact Code:</label>
+                </div>
+                <div class="col-sm-4">
+                    <input mdbInput type="text" id="txtFactCode" class="form-control" formControlName="FactCode" />
+                </div>
+            </div>            
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="chkIsActive" style="font-weight: bold;">Active                        </label>
+                </div>
+                <div class="col-sm-1">
+                    <input type="checkbox" id="chkIsActive" class="form-check-input" value=""  formControlName="active"/>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="txtEdiWindowBegin" style="font-weight: bold;">Edi Window Begin</label>
+                </div>
+                <div class="col-sm-4">
+                    <input mdbInput type="time" id="txtEdiWindowBegin" class="form-control"
+                        formControlName="EdiWindowBegin" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="txtEdiWindowEnd" style="font-weight: bold;">Edi Window End</label>
+                </div>
+                <div class="col-sm-4">
+                    <input mdbInput type="time" id="txtEdiWindowEnd" class="form-control"
+                        formControlName="EdiWindowEnd" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="txtProfileId" style="font-weight: bold;">Profile Id</label>
+                </div>
+                <div class="col-sm-4">
+                    <input mdbInput type="text" id="txtProfileId" class="form-control"
+                        formControlName="ProfileId" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="txtSaveLocation" style="font-weight: bold;">Save Location</label>
+                </div>
+                <div class="col-sm-4">
+                    <input mdbInput type="text" id="txtSaveLocation" class="form-control"
+                        formControlName="SaveLocation" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="txtCustomerName" style="font-weight: bold;">Customer
+                        Name</label>
+                </div>
+                <div class="col-sm-4">
+                    <input mdbInput type="text" id="txtCustomerName" class="form-control"
+                        formControlName="CustomerName" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+
+                </div>
+                <div class="col-sm-4">
+                    <br>
+                    <button class="btn btn-rounded blue-gradient " id="btnAdd"
+                        (click)="SaveUpdateFactCode()">SAVE</button> &nbsp;
+                    <button class="btn btn-rounded blue-gradient " id="btnback"
+                        (click)="BackToFactCodeList()">Back</button>&nbsp;
+                    <button class="btn btn-rounded blue-gradient " id="btnClear"
+                        (click)="ClearFormFields()">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</mdb-form-control>

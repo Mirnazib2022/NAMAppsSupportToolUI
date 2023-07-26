@@ -1,0 +1,55 @@
+<mdb-form-control>
+    <div class="container">
+        <div class="row">
+            <p>
+                <b>
+                    Add Invoice</b>
+            </p>
+        </div>
+    </div>
+    <div class="container" style="text-align: center;">
+        <form [formGroup]="InvoiceForm">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="txtInvoiceNum" style="font-weight: bold;">Invoice Number:</label>
+                </div>
+                <div class="col-sm-4">
+                    <input mdbInput type="text" id="txtInvoiceNum" class="form-control" formControlName="InvoiceNum" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="chkIsActive" style="font-weight: bold;">Active                        </label>
+                </div>
+                <div class="col-sm-1">
+                    <input type="checkbox" id="chkIsActive" class="form-check-input" value=""  formControlName="active"/>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="txtFactCode" style="font-weight: bold;">Customer Code:</label>
+                </div>
+                <div class="col-sm-4">
+                    <input mdbInput type="text" id="txtFactCode" class="form-control" formControlName="FactCode" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-2">
+
+                </div>
+                <div class="col-sm-4">
+                    <br>
+                    <button class="btn btn-rounded blue-gradient " id="btnAdd"
+                        (click)="SaveUpdateInvoice()">SAVE</button> &nbsp;
+                    <button class="btn btn-rounded blue-gradient " id="btnback"
+                        (click)="BackToInvoiceList()">Back</button>&nbsp;
+                    <button class="btn btn-rounded blue-gradient " id="btnClear"
+                        (click)="ClearFormFields()">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</mdb-form-control>

@@ -1,0 +1,56 @@
+<mdb-form-control>
+    <div class="container">
+        <div class="row">  
+            <p>
+                <b>
+                    Output Profile Set Up</b>
+            </p>
+        </div>
+        
+    </div>
+    <div class="container" style="text-align: center;">
+        <form [formGroup]="cityForm">
+
+        <div class="row">     
+            <div class="col-sm-2">
+                <label mdbLabel class="form-label" for="txtProfileId">Profile Id</label>
+            </div>                 
+            <div class="col-sm-3">                
+                <input mdbInput type="text" id="txtProfileId" class="form-control" formControlName="ProfileId" />
+            </div>
+        </div>
+        <br>
+            <div class="row">     
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="txtName"> Name</label>
+                </div>
+            <div class="col-sm-3">                
+                <input mdbInput type="text" id="txtName" class="form-control" formControlName="Name" />
+            </div>
+            </div>
+            <br>
+            <div class="row">     
+                <div class="col-sm-2">
+                    <label mdbLabel class="form-label" for="txtPropertyValue">PropertyValue</label>
+                </div>
+            <div class="col-sm-3">                
+                <input mdbInput type="text" id="txtPropertyValue" class="form-control" formControlName="PropertyValue" />
+            </div>
+            </div>
+            <br>
+            <div class="row">     
+                <div class="col-sm-2">                    
+                </div>
+            <div class="col-sm-3">                                                 
+                <button class="btn btn-rounded blue-gradient " id="btnAdd" (click)="SaveApplicationVariable()">SAVE</button>  &nbsp;
+                <button class="btn btn-rounded blue-gradient " id="btnback" (click)="BackToFactApplicationVariable()">Back</button>&nbsp;
+                <button class="btn btn-rounded blue-gradient " id="btnClear" (click)="ClearFormFields()" >Clear</button>   
+            </div>
+        </div>
+    </form>
+    </div>
+    <div class="container">
+        <div class="row">            
+        </div>
+    </div>
+  </mdb-form-control>
